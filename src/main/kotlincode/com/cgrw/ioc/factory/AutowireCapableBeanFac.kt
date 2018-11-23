@@ -5,7 +5,7 @@ import kotlincode.com.cgrw.ioc.BeanDef
 /**
  * @author: cgrw
  **/
-class AutowireCapableBeanFac: AbsBeanFac() {
+class dAutowireCapableBeanFac: AbsBeanFac() {
     override fun doCreateBean(beanDef: BeanDef): Any?{
 
         try {
