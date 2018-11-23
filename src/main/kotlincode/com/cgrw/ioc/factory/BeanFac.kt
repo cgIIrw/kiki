@@ -1,7 +1,6 @@
 package kotlincode.com.cgrw.ioc.factory
 
 import kotlincode.com.cgrw.ioc.BeanDef
-import java.util.concurrent.ConcurrentHashMap
 
 /**
  * @author: cgrw
