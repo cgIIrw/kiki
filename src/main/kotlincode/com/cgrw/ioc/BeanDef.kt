@@ -8,7 +8,7 @@ open class BeanDef {
 
     var beanClass: Class<*>? = null
 
-    var propertyValues: PropertyValues? = null
+    var propertyValues: PropertyValues = PropertyValues()
 
     var beanClassName :String? = null
     get() = field
