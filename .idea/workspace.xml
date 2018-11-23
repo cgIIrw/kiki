@@ -7,9 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9470631f-cf08-48e4-ac84-cbf57cb843a5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlincode/com/cgrw/ioc/PropertyValue.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlincode/com/cgrw/ioc/PropertyValues.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlincode/com/cgrw/ioc/factory/AutowireCapableBeanFac.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlincode/com/cgrw/ioc/factory/AutowireCapableBeanFac.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -77,11 +76,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PropertyValue.kt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PropertyValue.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlincode/com/cgrw/ioc/PropertyValue.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
-              <caret line="5" column="53" selection-start-line="5" selection-start-column="53" selection-end-line="5" selection-end-column="53" />
+              <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PropertyValues.kt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlincode/com/cgrw/ioc/PropertyValues.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -151,6 +159,7 @@
         <option value="$PROJECT_DIR$/src/main/kotlincode/com/cgrw/ioc/factory/AutowireCapableBeanFac.kt" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/kotlincode/com/cgrw/ioc/PropertyValue.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlincode/com/cgrw/ioc/PropertyValues.kt" />
       </list>
     </option>
   </component>
@@ -182,8 +191,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="446" />
-    <option name="y" value="70" />
+    <option name="x" value="91" />
+    <option name="y" value="454" />
     <option name="width" value="1100" />
     <option name="height" value="709" />
   </component>
@@ -228,6 +237,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/.gitignore" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
@@ -417,7 +427,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="446" y="70" width="1100" height="709" extended-state="0" />
+    <frame x="91" y="454" width="1100" height="709" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32843137" />
       <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.49905482" weight="0.32843137" />
@@ -428,9 +439,9 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49621928" weight="0.32843137" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32843137" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32843137" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2589792" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19754253" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -551,15 +562,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
+        <state relative-caret-position="118">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlincode/com/cgrw/ioc/PropertyValue.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="5" column="53" selection-start-line="5" selection-start-column="53" selection-end-line="5" selection-end-column="53" />
+          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlincode/com/cgrw/ioc/PropertyValues.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
         </state>
       </provider>
     </entry>
