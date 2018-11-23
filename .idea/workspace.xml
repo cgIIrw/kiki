@@ -7,8 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9470631f-cf08-48e4-ac84-cbf57cb843a5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlincode/com/cgrw/ioc/PropertyValues.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlincode/com/cgrw/ioc/BeanDef.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlincode/com/cgrw/ioc/BeanDef.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlincode/com/cgrw/ioc/factory/AutowireCapableBeanFac.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlincode/com/cgrw/ioc/factory/AutowireCapableBeanFac.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -70,8 +71,8 @@
       <file leaf-file-name="BeanDef.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlincode/com/cgrw/ioc/BeanDef.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+            <state relative-caret-position="150">
+              <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -85,11 +86,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PropertyValues.kt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PropertyValues.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlincode/com/cgrw/ioc/PropertyValues.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+            <state relative-caret-position="135">
+              <caret line="9" column="38" lean-forward="true" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -118,11 +119,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AutowireCapableBeanFac.kt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AutowireCapableBeanFac.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/kotlincode/com/cgrw/ioc/factory/AutowireCapableBeanFac.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+            <state relative-caret-position="289">
+              <caret line="29" column="43" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
+              <folding>
+                <element signature="e#41#110#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -153,13 +157,13 @@
         <option value="$PROJECT_DIR$/src/test/kotlincode/com/cgrw/ioc/BeanDefTest.java" />
         <option value="$PROJECT_DIR$/src/test/kotlincode/com/cgrw/ioc/BeanDefTest.kt" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/kotlincode/com/cgrw/ioc/BeanDef.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlincode/com/cgrw/ioc/factory/BeanFac.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlincode/com/cgrw/ioc/factory/AbsBeanFac.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlincode/com/cgrw/ioc/factory/AutowireCapableBeanFac.kt" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/kotlincode/com/cgrw/ioc/PropertyValue.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlincode/com/cgrw/ioc/PropertyValues.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlincode/com/cgrw/ioc/BeanDef.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlincode/com/cgrw/ioc/factory/AutowireCapableBeanFac.kt" />
       </list>
     </option>
   </component>
@@ -191,8 +195,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="91" />
-    <option name="y" value="454" />
+    <option name="x" value="288" />
+    <option name="y" value="51" />
     <option name="width" value="1100" />
     <option name="height" value="709" />
   </component>
@@ -227,6 +231,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="ioc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kiki" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kiki" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="ioc" type="462c0819:PsiDirectoryNode" />
+              <item name="factory" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -427,7 +439,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="91" y="454" width="1100" height="709" extended-state="0" />
+    <frame x="288" y="51" width="1100" height="709" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32843137" />
@@ -526,6 +538,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlincode/com/cgrw/ioc/factory/BeanFac.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -533,13 +552,6 @@
           <folding>
             <element signature="e#41#125#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlincode/com/cgrw/ioc/factory/AutowireCapableBeanFac.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -553,20 +565,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlincode/com/cgrw/ioc/BeanDef.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlincode/com/cgrw/ioc/PropertyValue.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -576,8 +574,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlincode/com/cgrw/ioc/PropertyValues.kt">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="38" lean-forward="true" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlincode/com/cgrw/ioc/BeanDef.kt">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlincode/com/cgrw/ioc/factory/AutowireCapableBeanFac.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="29" column="43" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
+          <folding>
+            <element signature="e#41#110#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

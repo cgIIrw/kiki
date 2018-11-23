@@ -8,6 +8,8 @@ open class BeanDef {
 
     var beanClass: Class<*>? = null
 
+    var propertyValues: PropertyValues? = null
+
     var beanClassName :String? = null
     get() = field
     set(value) {
@@ -18,4 +20,6 @@ open class BeanDef {
             e.printStackTrace()
         }
     }
+
+
 }
