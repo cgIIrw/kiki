@@ -3,9 +3,7 @@ package testresources.beans
 /**
  * @author: cgrw
  **/
-class Person {
-
+class Student {
     var name: String? = null
     var age: String? = null
-    var refer: Any? = null
 }

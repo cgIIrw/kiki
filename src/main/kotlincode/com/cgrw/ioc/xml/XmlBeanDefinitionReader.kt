@@ -45,7 +45,7 @@ class XmlBeanDefinitionReader(resourceLoader: ResourceLoader) : AbstractBeanDefi
         for (i in 0 until nl.length) {
             var node = nl.item(i)
             if (node is Element) {
-                var ele = node as Element
+                var ele = node
                 processBeanDefinition(ele)
             }
         }

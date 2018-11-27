@@ -4,5 +4,12 @@
         <property name="age" value="20"/>
         <property name="refer" ref="Person"/>
     </bean>
+
+    <bean id="student" class="testresources.beans.Student">
+        <property name="name" value="stu"/>
+        <property name="age" value="10"/>
+    </bean>
+
+
 </beans>
 
