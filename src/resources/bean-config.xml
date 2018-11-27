@@ -1,0 +1,7 @@
+<beans>
+    <bean id="person" class="testresources.beans.Person">
+        <property name="name" value="cgrw"/>
+        <property name="age" value="20"/>
+    </bean>
+</beans>
+

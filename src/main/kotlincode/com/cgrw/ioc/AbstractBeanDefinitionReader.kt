@@ -7,7 +7,8 @@ import kotlincode.com.cgrw.ioc.io.ResourceLoader
  **/
 abstract class AbstractBeanDefinitionReader(var resourceLoader: ResourceLoader)
     : BeanDefinitionReader {
+    var registry: HashMap<String, BeanDef>? = null
     init {
-        var registry = HashMap<String, BeanDef>()
+        registry = HashMap()
     }
 }

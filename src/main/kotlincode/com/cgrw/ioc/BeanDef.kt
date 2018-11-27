@@ -11,7 +11,6 @@ open class BeanDef {
     var propertyValues: PropertyValues = PropertyValues()
 
     var beanClassName :String? = null
-    get() = field
     set(value) {
         field = value
         try {
@@ -20,6 +19,4 @@ open class BeanDef {
             e.printStackTrace()
         }
     }
-
-
 }
