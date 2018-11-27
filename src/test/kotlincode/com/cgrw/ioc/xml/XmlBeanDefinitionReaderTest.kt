@@ -1,5 +1,6 @@
 package kotlincode.com.cgrw.ioc.xml
 
+import kotlincode.com.cgrw.ioc.BeanReference
 import kotlincode.com.cgrw.ioc.io.ResourceLoader
 import org.junit.Test
 
@@ -16,6 +17,8 @@ class XmlBeanDefinitionReaderTest {
     @Test
     fun loadBeanDefinitions() {
         xmlBeanDefinitionReader.loadBeanDefinitions("bean-config.xml")
-        println(xmlBeanDefinitionReader.registry!!.get("person")!!.beanClassName)
+        var s = xmlBeanDefinitionReader.registry!!.get("person")!!
+                .propertyValues.propertyValueList.get(2).value as BeanReference
+        println(s.name)
     }
 }

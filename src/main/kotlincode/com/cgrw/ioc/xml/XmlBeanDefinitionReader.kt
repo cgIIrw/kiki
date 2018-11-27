@@ -2,6 +2,7 @@ package kotlincode.com.cgrw.ioc.xml
 
 import kotlincode.com.cgrw.ioc.AbstractBeanDefinitionReader
 import kotlincode.com.cgrw.ioc.BeanDef
+import kotlincode.com.cgrw.ioc.BeanReference
 import kotlincode.com.cgrw.ioc.PropertyValue
 import kotlincode.com.cgrw.ioc.io.ResourceLoader
 import org.w3c.dom.Document
@@ -14,7 +15,6 @@ import javax.xml.parsers.DocumentBuilderFactory
  * @author: cgrw
  **/
 class XmlBeanDefinitionReader(resourceLoader: ResourceLoader) : AbstractBeanDefinitionReader(resourceLoader) {
-
 
     // 获得inputStream流
     override fun loadBeanDefinitions(location: String) {
@@ -71,7 +71,18 @@ class XmlBeanDefinitionReader(resourceLoader: ResourceLoader) : AbstractBeanDefi
                 var propertyEle = node as Element
                 var name = propertyEle.getAttribute("name")
                 var value = propertyEle.getAttribute("value")
-                beanDef.propertyValues.addProper(PropertyValue(name, value))
+
+                // 如果存在value或者value不为空字符串
+                if (value != null && value.isNotEmpty())
+                    beanDef.propertyValues.addProper(PropertyValue(name, value))
+                // 不存在value时，尝试读取ref
+                else {
+                    var ref = propertyEle.getAttribute("ref")
+                    if (ref == null || ref.isEmpty())
+                        throw IllegalArgumentException("配置输入错误")
+                    var beanReference = BeanReference(ref)
+                    beanDef.propertyValues.addProper(PropertyValue(name, beanReference))
+                }
             }
         }
     }
