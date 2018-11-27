@@ -29,6 +29,7 @@ abstract class AbsBeanFac : BeanFac{
         return bean!!
     }
 
+    // 在工厂中注册bean包
     override fun registerBeanDef(name: String, beanDef: BeanDef) {
         beanDefMap.put(name, beanDef)
         beanDefNames.add(name)
@@ -41,5 +42,6 @@ abstract class AbsBeanFac : BeanFac{
         }
     }
 
+    // 抽象方法，用来依赖注入创建bean对象
     abstract fun doCreateBean(beanDef: BeanDef): Any?
 }
