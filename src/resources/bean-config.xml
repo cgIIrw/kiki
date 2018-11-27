@@ -2,7 +2,7 @@
     <bean id="person" class="testresources.beans.Person">
         <property name="name" value="cgrw"/>
         <property name="age" value="20"/>
-        <property name="refer" ref="Person"/>
+        <property name="refer" ref="student"/>
     </bean>
 
     <bean id="student" class="testresources.beans.Student">
