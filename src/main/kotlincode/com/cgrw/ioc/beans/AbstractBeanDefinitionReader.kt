@@ -1,6 +1,6 @@
-package kotlincode.com.cgrw.ioc
+package kotlincode.com.cgrw.ioc.beans
 
-import kotlincode.com.cgrw.ioc.io.ResourceLoader
+import kotlincode.com.cgrw.ioc.beans.io.ResourceLoader
 
 /**
  * @author: cgrw

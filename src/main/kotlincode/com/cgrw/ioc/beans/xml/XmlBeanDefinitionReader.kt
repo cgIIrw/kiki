@@ -1,14 +1,13 @@
-package kotlincode.com.cgrw.ioc.xml
+package kotlincode.com.cgrw.ioc.beans.xml
 
-import kotlincode.com.cgrw.ioc.AbstractBeanDefinitionReader
-import kotlincode.com.cgrw.ioc.BeanDef
+import kotlincode.com.cgrw.ioc.beans.AbstractBeanDefinitionReader
+import kotlincode.com.cgrw.ioc.beans.BeanDef
 import kotlincode.com.cgrw.ioc.BeanReference
-import kotlincode.com.cgrw.ioc.PropertyValue
-import kotlincode.com.cgrw.ioc.io.ResourceLoader
+import kotlincode.com.cgrw.ioc.beans.PropertyValue
+import kotlincode.com.cgrw.ioc.beans.io.ResourceLoader
 import org.w3c.dom.Document
 import org.w3c.dom.Element
 import java.io.InputStream
-import javax.xml.parsers.DocumentBuilder
 import javax.xml.parsers.DocumentBuilderFactory
 
 /**

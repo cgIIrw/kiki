@@ -1,10 +1,10 @@
 package kotlincode.com.cgrw.ioc.factory
 
-import kotlincode.com.cgrw.ioc.io.ResourceLoader
-import kotlincode.com.cgrw.ioc.xml.XmlBeanDefinitionReader
+import kotlincode.com.cgrw.ioc.beans.factory.AutowireCapableBeanFac
+import kotlincode.com.cgrw.ioc.beans.io.ResourceLoader
+import kotlincode.com.cgrw.ioc.beans.xml.XmlBeanDefinitionReader
 import org.junit.Test
 
-import org.junit.Assert.*
 import testresources.beans.Person
 import testresources.beans.Student
 

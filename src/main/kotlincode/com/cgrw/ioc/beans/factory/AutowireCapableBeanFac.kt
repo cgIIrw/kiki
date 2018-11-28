@@ -1,6 +1,6 @@
-package kotlincode.com.cgrw.ioc.factory
+package kotlincode.com.cgrw.ioc.beans.factory
 
-import kotlincode.com.cgrw.ioc.BeanDef
+import kotlincode.com.cgrw.ioc.beans.BeanDef
 import kotlincode.com.cgrw.ioc.BeanReference
 
 /**

@@ -1,13 +1,13 @@
-package kotlincode.com.cgrw.ioc.factory
+package kotlincode.com.cgrw.ioc.beans.factory
 
-import kotlincode.com.cgrw.ioc.BeanDef
+import kotlincode.com.cgrw.ioc.beans.BeanDef
 import java.lang.IllegalArgumentException
 import java.util.concurrent.ConcurrentHashMap
 
 /**
  * @author: cgrw
  **/
-abstract class AbsBeanFac : BeanFac{
+abstract class AbsBeanFac : BeanFac {
 
     // 定义一个bean包的容器
     val beanDefMap = ConcurrentHashMap<String, BeanDef>()
@@ -18,15 +18,12 @@ abstract class AbsBeanFac : BeanFac{
 
     override fun getBean(name: String): Any {
         var beanDef = beanDefMap[name]
-        if (beanDef == null)
-            throw IllegalArgumentException("该bean没有定义")
 
+        // Elvis操作符的作用是为null则返回":"右边的表达式
+        beanDef ?: throw IllegalArgumentException("该bean没有定义")
 
         var bean = beanDef.bean
-        if (bean == null) {
-            bean = doCreateBean(beanDef)
-        }
-        return bean!!
+        return bean?: doCreateBean(beanDef)!!
     }
 
     // 在工厂中注册bean包

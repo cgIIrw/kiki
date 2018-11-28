@@ -1,4 +1,4 @@
-package kotlincode.com.cgrw.ioc.io
+package kotlincode.com.cgrw.ioc.beans.io
 
 /**
  * @author: cgrw

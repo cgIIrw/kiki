@@ -1,10 +1,9 @@
 package kotlincode.com.cgrw.ioc.xml
 
 import kotlincode.com.cgrw.ioc.BeanReference
-import kotlincode.com.cgrw.ioc.io.ResourceLoader
+import kotlincode.com.cgrw.ioc.beans.io.ResourceLoader
+import kotlincode.com.cgrw.ioc.beans.xml.XmlBeanDefinitionReader
 import org.junit.Test
-
-import org.junit.Assert.*
 
 /**
  * @author: cgrw
