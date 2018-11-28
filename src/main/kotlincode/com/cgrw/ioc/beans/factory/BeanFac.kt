@@ -7,7 +7,7 @@ import kotlincode.com.cgrw.ioc.beans.BeanDef
  **/
 open interface BeanFac {
 
-    fun getBean(name: String): Any?
+    fun getBean(id: String): Any?
 
 //    fun registerBeanDef(name: String, beanDef: BeanDef)
 }

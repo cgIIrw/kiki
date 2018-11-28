@@ -52,12 +52,12 @@ class XmlBeanDefinitionReader(resourceLoader: ResourceLoader) : AbstractBeanDefi
 
     // 从node解析出bean
     fun processBeanDefinition(ele: Element) {
-        var name = ele.getAttribute("id")
+        var id = ele.getAttribute("id")
         var className = ele.getAttribute("class")
         var beanDef = BeanDef()
         processProperty(ele, beanDef)
         beanDef.beanClassName = className
-        registry!!.put(name, beanDef)
+        registry!!.put(id, beanDef)
     }
 
     // 解析bean的属性

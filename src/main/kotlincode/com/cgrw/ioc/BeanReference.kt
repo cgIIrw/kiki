@@ -3,7 +3,6 @@ package kotlincode.com.cgrw.ioc
 /**
  * @author: cgrw
  **/
-class BeanReference(name: String) {
-    var name: String = name
+class BeanReference(var id: String) {
     var bean: Any? = null
 }

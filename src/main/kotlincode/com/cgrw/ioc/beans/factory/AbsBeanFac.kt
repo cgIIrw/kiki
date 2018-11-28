@@ -13,11 +13,11 @@ abstract class AbsBeanFac : BeanFac {
     val beanDefMap = ConcurrentHashMap<String, BeanDef>()
 
     // 定义一个bean包名的容器
-    val beanDefNames = ArrayList<String>()
+    val beanDefIds = ArrayList<String>()
 
 
-    override fun getBean(name: String): Any {
-        var beanDef = beanDefMap[name]
+    override fun getBean(id: String): Any {
+        var beanDef = beanDefMap[id]
 
         // Elvis操作符的作用是为null则返回":"右边的表达式
         beanDef ?: throw IllegalArgumentException("该bean没有定义")
@@ -27,15 +27,15 @@ abstract class AbsBeanFac : BeanFac {
     }
 
     // 在工厂中注册bean包
-    fun registerBeanDef(name: String, beanDef: BeanDef) {
-        beanDefMap.put(name, beanDef)
-        beanDefNames.add(name)
+    fun registerBeanDef(id: String, beanDef: BeanDef) {
+        beanDefMap.put(id, beanDef)
+        beanDefIds.add(id)
     }
 
     fun preInstantiateSingletons() {
-        for (i in this.beanDefNames.iterator()) {
-            var beanName = i
-            getBean(beanName)
+        for (i in this.beanDefIds.iterator()) {
+            var beanId = i
+            getBean(beanId)
         }
     }
 

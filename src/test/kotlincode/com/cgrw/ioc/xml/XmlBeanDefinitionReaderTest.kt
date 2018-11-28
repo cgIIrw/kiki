@@ -18,6 +18,6 @@ class XmlBeanDefinitionReaderTest {
         xmlBeanDefinitionReader.loadBeanDefinitions("bean-config.xml")
         var s = xmlBeanDefinitionReader.registry!!.get("person")!!
                 .propertyValues.propertyValueList.get(2).value as BeanReference
-        println(s.name)
+        println(s.id)
     }
 }
