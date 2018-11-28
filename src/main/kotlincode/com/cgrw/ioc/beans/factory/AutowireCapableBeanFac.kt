@@ -11,19 +11,10 @@ class AutowireCapableBeanFac : AbsBeanFac() {
     // 依赖注入产生bean
     override fun doCreateBean(beanDef: BeanDef): Any? {
 
-//        try {
-
         var bean = createBeanInstance(beanDef)
         beanDef.bean = bean
         applyPropertyValues(bean, beanDef)
         return bean
-//            return bean
-//        } catch (e: InstantiationException) {
-//            e.printStackTrace()
-//        } catch (e: IllegalAccessException) {
-//            e.printStackTrace()
-//        }
-//        return null
     }
 
     // 创建未添加属性值的bean对象

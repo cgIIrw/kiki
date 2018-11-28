@@ -23,11 +23,11 @@ abstract class AbsBeanFac : BeanFac {
         beanDef ?: throw IllegalArgumentException("该bean没有定义")
 
         var bean = beanDef.bean
-        return bean?: doCreateBean(beanDef)!!
+        return bean ?: doCreateBean(beanDef)!!
     }
 
     // 在工厂中注册bean包
-    override fun registerBeanDef(name: String, beanDef: BeanDef) {
+    fun registerBeanDef(name: String, beanDef: BeanDef) {
         beanDefMap.put(name, beanDef)
         beanDefNames.add(name)
     }

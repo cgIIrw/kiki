@@ -10,6 +10,11 @@
         <property name="age" value="10"/>
     </bean>
 
+    <bean id="student01" class="testresources.beans.Student">
+        <property name="name" value="stu"/>
+        <property name="age" value="12"/>
+    </bean>
+
 
 </beans>
 

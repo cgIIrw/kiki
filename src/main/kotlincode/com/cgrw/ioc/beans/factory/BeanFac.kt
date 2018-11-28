@@ -9,5 +9,5 @@ open interface BeanFac {
 
     fun getBean(name: String): Any?
 
-    fun registerBeanDef(name: String, beanDef: BeanDef)
+//    fun registerBeanDef(name: String, beanDef: BeanDef)
 }
