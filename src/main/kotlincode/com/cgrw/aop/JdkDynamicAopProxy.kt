@@ -15,8 +15,8 @@ class JdkDynamicAopProxy(var advised: AdvisedSupport) : AopProxy, InvocationHand
 
     }
 
-    override fun invoke(proxy: Any?, method: Method?, args: Array<Any>?): Any {
+    override fun invoke(proxy: Any?, method: Method?, args: Array<Any>?): Any? {
         var methodInterceptor = advised.methodInterceptor
-        return methodInterceptor!!.invoke(ReflectiveMethodInvocation(advised.targetSource!!.target!!, method!!, args!!))
+        return methodInterceptor?.let { it.invoke(ReflectiveMethodInvocation(advised.targetSource?.let { it.target }, method, args))}
     }
 }
