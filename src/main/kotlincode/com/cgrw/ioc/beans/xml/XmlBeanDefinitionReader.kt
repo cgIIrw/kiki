@@ -2,7 +2,7 @@ package kotlincode.com.cgrw.ioc.beans.xml
 
 import kotlincode.com.cgrw.ioc.beans.AbstractBeanDefinitionReader
 import kotlincode.com.cgrw.ioc.beans.BeanDef
-import kotlincode.com.cgrw.ioc.BeanReference
+import kotlincode.com.cgrw.ioc.beans.BeanReference
 import kotlincode.com.cgrw.ioc.beans.PropertyValue
 import kotlincode.com.cgrw.ioc.beans.io.ResourceLoader
 import org.w3c.dom.Document
@@ -61,7 +61,7 @@ class XmlBeanDefinitionReader(resourceLoader: ResourceLoader) : AbstractBeanDefi
     }
 
     // 解析bean的属性
-    fun processProperty(ele: Element, beanDef: BeanDef) {
+    private fun processProperty(ele: Element, beanDef: BeanDef) {
         var propertyNode = ele.getElementsByTagName("property")
         for (i in 0 until propertyNode.length) {
             var node = propertyNode.item(i)
