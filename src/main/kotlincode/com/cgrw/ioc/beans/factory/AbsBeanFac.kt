@@ -16,9 +16,23 @@ abstract class AbsBeanFac : BeanFac {
     // 定义一个添加bean包id的容器
     val beanDefIds = ArrayList<String>()
 
+    // 定义后置处理器容器
     private var beanPostProcessors = ArrayList<BeanPostProcessor>()
 
+    // bean初始化方法
+    protected fun initializeBean(_bean: Any, id: String): Any {
+        var bean = _bean
+        for (beanPostProcessor in beanPostProcessors) {
+            bean = beanPostProcessor.postProcessAfterInitialization(bean, id)
+        }
 
+        // todo
+
+        for (beanPostProcessor in beanPostProcessors) {
+            bean = beanPostProcessor.postProcessAfterInitialization(bean, id)
+        }
+        return bean
+    }
 
     override fun getBean(id: String): Any {
         var beanDef = beanDefMap[id]
@@ -27,7 +41,9 @@ abstract class AbsBeanFac : BeanFac {
         beanDef ?: throw IllegalArgumentException("该bean没有定义")
 
         var bean = beanDef.bean
-        return bean ?: doCreateBean(beanDef)!!
+
+        // 添加bean初始化处理
+        return bean ?: initializeBean(doCreateBean(beanDef)!!, id)
     }
 
     // 在工厂中注册bean包
@@ -58,4 +74,20 @@ abstract class AbsBeanFac : BeanFac {
 
     // 装配的抽象方法，留给装配工厂去实现
     protected abstract fun applyPropertyValues(bean: Any, beanDef: BeanDef)
+
+    // 在后置处理器容器中添加后置处理器
+    fun addBeanPostProcessor(beanPostProcessor: BeanPostProcessor) {
+        this.beanPostProcessors.add(beanPostProcessor)
+    }
+
+    // 根据类型返回相同类型bean构成的容器的方法
+    fun getBeansForType(type: Class<*>): List<*> {
+        var beans = ArrayList<Any>()
+
+        for (beanDefId in beanDefIds) {
+            if (type.isAssignableFrom(beanDefMap[beanDefId]!!.beanClass))
+                beans.add(getBean(beanDefId))
+        }
+        return beans
+    }
 }
