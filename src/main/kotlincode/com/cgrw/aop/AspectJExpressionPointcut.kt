@@ -84,7 +84,7 @@ class AspectJExpressionPointcut : Pointcut, ClassFilter, MethodMatcher {
     // 已经通过了判空，如果还为空将抛出空指针异常，所以双感叹号；
     override fun matches(method: Method, targetClass: Class<*>): Boolean {
         checkReadyToMatch()
-        var shadowMatch = pointcutExpression!!.matchesAdviceExecution(method)
+        var shadowMatch = pointcutExpression!!.matchesMethodExecution(method)
         if (shadowMatch.alwaysMatches())
             return true
         else if (shadowMatch.neverMatches())
