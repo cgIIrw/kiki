@@ -1,6 +1,7 @@
 package kotlincode.com.cgrw.ioc.beans.factory
 
 import kotlincode.com.cgrw.ioc.beans.BeanDef
+import kotlincode.com.cgrw.ioc.beans.BeanPostProcessor
 import java.lang.IllegalArgumentException
 import java.util.concurrent.ConcurrentHashMap
 
@@ -12,8 +13,11 @@ abstract class AbsBeanFac : BeanFac {
     // 定义一个bean包的容器
     val beanDefMap = ConcurrentHashMap<String, BeanDef>()
 
-    // 定义一个bean包名的容器
+    // 定义一个添加bean包id的容器
     val beanDefIds = ArrayList<String>()
+
+    private var beanPostProcessors = ArrayList<BeanPostProcessor>()
+
 
 
     override fun getBean(id: String): Any {
@@ -32,6 +36,7 @@ abstract class AbsBeanFac : BeanFac {
         beanDefIds.add(id)
     }
 
+    // 通过beanId获得创建的bean对象
     fun preInstantiateSingletons() {
         for (i in this.beanDefIds.iterator()) {
             var beanId = i
@@ -39,6 +44,18 @@ abstract class AbsBeanFac : BeanFac {
         }
     }
 
-    // 抽象方法，用来依赖注入创建bean对象
-    abstract fun doCreateBean(beanDef: BeanDef): Any?
+    // 创建未添加属性值的bean对象
+    fun createBeanInstance(beanDef: BeanDef) = beanDef.beanClass!!.newInstance()
+
+    // 依赖注入产生bean
+    fun doCreateBean(beanDef: BeanDef): Any? {
+
+        var bean = createBeanInstance(beanDef)
+        beanDef.bean = bean
+        applyPropertyValues(bean, beanDef)
+        return bean
+    }
+
+    // 装配的抽象方法，留给装配工厂去实现
+    protected abstract fun applyPropertyValues(bean: Any, beanDef: BeanDef)
 }
