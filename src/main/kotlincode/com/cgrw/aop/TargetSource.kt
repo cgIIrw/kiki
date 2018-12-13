@@ -7,10 +7,15 @@ package kotlincode.com.cgrw.aop
 class TargetSource {
 
     // 被代理的目标对象的Class对象
-    var targetClass: Class<*>? = null
+    var targetClass: Array<Class<*>>
     private set
 
     // 被代理的目标对象
     var target: Any? = null
     private set
+
+    constructor(target: Any, vararg targetClass: Class<*>) {
+        this.target = target
+        this.targetClass = targetClass as Array<Class<*>>
+    }
 }
