@@ -20,12 +20,14 @@ class AspectJExpressionPointcutTest {
 
     @Test
     fun matches() {
-        Assert.assertTrue(aspectJExpressionPointcut.getClassFilter().matches(Advisor::class.java))
+        Assert.assertTrue(aspectJExpressionPointcut.getClassFilter()
+                .matches(Advisor::class.java))
     }
 
     @Test
     fun matches02() {
         Assert.assertTrue(aspectJExpressionPointcut.getMethodMatcher()
-                .matches(Advisor::class.java.getDeclaredMethod("getAdvice"), Advisor::class.java))
+                .matches(Advisor::class.java.getDeclaredMethod("getAdvice")
+                        , Advisor::class.java))
     }
 }

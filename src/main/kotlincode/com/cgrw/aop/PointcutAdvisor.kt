@@ -7,3 +7,5 @@ package kotlincode.com.cgrw.aop
 interface PointcutAdvisor: Advisor {
     fun getPointcut(): Pointcut
 }
+
+

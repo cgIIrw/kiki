@@ -11,4 +11,7 @@ class AdvisedSupport {
 
     // 拦截器对象
     var methodInterceptor: MethodInterceptor? = null
+
+    // 判断方法匹配的接口引用
+    var methodMatcher: MethodMatcher? = null
 }
