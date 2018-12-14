@@ -8,14 +8,14 @@ class TargetSource {
 
     // 被代理的目标对象的Class对象
     var targetClass: Array<Class<*>>
-    private set
+        private set
 
     // 被代理的目标对象
     var target: Any? = null
-    private set
+        private set
 
     constructor(target: Any, vararg targetClass: Class<*>) {
         this.target = target
-        this.targetClass = targetClass as Array<Class<*>>
+        this.targetClass = Array(targetClass.size) { i -> targetClass[i] }
     }
 }
