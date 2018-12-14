@@ -23,7 +23,7 @@ class AspectJAwareAdvisorAutoProxyCreator : BeanPostProcessor, BeanFactoryAware 
             return bean
 
         var advisors = beanFac!!.getBeansForType(AspectJExpressionPointcutAdvisor::class.java)
-                as List<AspectJExpressionPointcutAdvisor>
+                as ArrayList<AspectJExpressionPointcutAdvisor>
 
         advisors.forEach {
             if (it.getPointcut().getClassFilter().matches(bean::class.java)) {
