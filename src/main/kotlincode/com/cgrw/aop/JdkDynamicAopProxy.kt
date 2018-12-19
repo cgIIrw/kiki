@@ -10,7 +10,7 @@ import java.lang.reflect.Proxy
 class JdkDynamicAopProxy(var advised: AdvisedSupport) : AopProxy, InvocationHandler{
 
     override fun getProxy(): Any? {
-        return Proxy.newProxyInstance(this.javaClass.classLoader, advised.targetSource!!.targetClass, this)
+        return Proxy.newProxyInstance(advised.targetSource!!.target!!.javaClass.classLoader, advised.targetSource!!.targetClass, this)
 
     }
 
