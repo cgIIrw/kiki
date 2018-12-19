@@ -3,5 +3,16 @@ package testresources.beans
 /**
  * @author: cgrw
  **/
-class HelloJDKProxy {
+
+interface HelloJDKFather {
+    fun helloMethod(x: Int)
+}
+
+interface HelloJDKMother
+
+class HelloJDKProxy : HelloJDKFather, HelloJDKMother {
+
+    override fun helloMethod(x: Int) {
+        println("I am Hello! $x")
+    }
 }
