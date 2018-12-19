@@ -15,6 +15,12 @@
         <property name="age" value="12"/>
     </bean>
 
+    <bean id="helloJDKProxy" class="testresources.beans.HelloJDKProxy">
+    </bean>
+
+    <bean id="simpleInterceptor" class="testresources.beans.SimpleInterceptor">
+    </bean>
+
 
 </beans>
 
