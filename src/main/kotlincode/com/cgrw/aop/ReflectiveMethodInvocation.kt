@@ -19,7 +19,8 @@ class ReflectiveMethodInvocation(var target: Any?, @JvmField var method: Method?
     }
 
     override fun proceed(): Any? {
-        return method?.invoke(target, args)
+        var re = method!!.invoke(target, *(args ?: arrayOfNulls<Any>(0)))
+        return re
     }
 
     override fun getStaticPart(): AccessibleObject? {
