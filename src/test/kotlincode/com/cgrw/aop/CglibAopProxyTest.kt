@@ -30,6 +30,6 @@ class CglibAopProxyTest {
         advisedSupport.methodInterceptor = simpleInterceptor
 
         var CglibAopProxy = CglibAopProxy(advisedSupport).getProxy() as HelloJDKProxy
-        CglibAopProxy.helloMethod(5)
+        CglibAopProxy.helloMethod("Test")
     }
 }
