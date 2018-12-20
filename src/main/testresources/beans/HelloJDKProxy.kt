@@ -5,14 +5,14 @@ package testresources.beans
  **/
 
 interface HelloJDKFather {
-    fun helloMethod(x: Int)
+    fun helloMethod(s: String)
 }
 
 interface HelloJDKMother
 
-class HelloJDKProxy : HelloJDKFather, HelloJDKMother {
+open class HelloJDKProxy : HelloJDKFather, HelloJDKMother {
 
-    override fun helloMethod(x: Int) {
-        println("I am Hello! $x")
+    override fun helloMethod(s: String) {
+        println("I am: ${s}!")
     }
 }
