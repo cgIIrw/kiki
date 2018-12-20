@@ -1,5 +1,6 @@
 package kotlincode.com.cgrw.ioc.beans.factory
 
+import kotlincode.com.cgrw.aop.AspectJAwareAdvisorAutoProxyCreator
 import kotlincode.com.cgrw.ioc.beans.BeanDef
 import kotlincode.com.cgrw.ioc.beans.BeanPostProcessor
 import java.lang.IllegalArgumentException
@@ -23,7 +24,7 @@ abstract class AbsBeanFac : BeanFac {
     protected fun initializeBean(_bean: Any, id: String): Any {
         var bean = _bean
         for (beanPostProcessor in beanPostProcessors) {
-            bean = beanPostProcessor.postProcessAfterInitialization(bean, id)
+            bean = beanPostProcessor.postProcessBeforeInitialization(bean, id)
         }
 
         // todo
@@ -66,14 +67,18 @@ abstract class AbsBeanFac : BeanFac {
     // 依赖注入产生bean
     fun doCreateBean(beanDef: BeanDef): Any? {
 
+        // 添加判断语句避免重复创建对象
+        if (beanDef.bean != null)
+            return beanDef.bean
+
         var bean = createBeanInstance(beanDef)
-        beanDef.bean = bean
         applyPropertyValues(bean, beanDef)
+        beanDef.bean = bean
         return bean
     }
 
     // 装配的抽象方法，留给装配工厂去实现
-    protected abstract fun applyPropertyValues(bean: Any, beanDef: BeanDef)
+    abstract fun applyPropertyValues(bean: Any, beanDef: BeanDef)
 
     // 在后置处理器容器中添加后置处理器
     fun addBeanPostProcessor(beanPostProcessor: BeanPostProcessor) {
@@ -86,7 +91,7 @@ abstract class AbsBeanFac : BeanFac {
 
         for (beanDefId in beanDefIds) {
             if (type.isAssignableFrom(beanDefMap[beanDefId]!!.beanClass))
-                beans.add(getBean(beanDefId))
+                beans.add(doCreateBean(beanDefMap[beanDefId]!!)!!)
         }
         return beans
     }
