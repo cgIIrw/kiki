@@ -1,4 +1,20 @@
 <beans>
+    <bean id="simpleInterceptor" class="testresources.beans.SimpleInterceptor">
+    </bean>
+
+    <bean id="aspectJExpressionPointcut" class="kotlincode.com.cgrw.aop.AspectJExpressionPointcut">
+        <property name="expression" value="execution(* testresources.beans.HelloJDKFather.*(..))"/>
+    </bean>
+
+    <bean id="aspectJExpressionPointcutAdvisor" class="kotlincode.com.cgrw.aop.AspectJExpressionPointcutAdvisor">
+        <property name="pointcut" ref="aspectJExpressionPointcut"/>
+        <property name="advice" ref="simpleInterceptor"/>
+    </bean>
+
+    <bean id="aspectJAwareAdvisorAutoProxyCreator" class="kotlincode.com.cgrw.aop.AspectJAwareAdvisorAutoProxyCreator">
+    </bean>
+
+
     <bean id="person" class="testresources.beans.Person">
         <property name="name" value="cgrw"/>
         <property name="age" value="20"/>
@@ -17,10 +33,6 @@
 
     <bean id="helloJDKProxy" class="testresources.beans.HelloJDKProxy">
     </bean>
-
-    <bean id="simpleInterceptor" class="testresources.beans.SimpleInterceptor">
-    </bean>
-
 
 </beans>
 
