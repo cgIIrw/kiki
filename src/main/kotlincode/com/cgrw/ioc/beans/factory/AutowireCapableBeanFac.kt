@@ -21,7 +21,7 @@ class AutowireCapableBeanFac : AbsBeanFac() {
             var value = p.value
             if (value is BeanReference) {
                 var beanReference = value
-                value = getBean(beanReference.id)
+                value = doCreateBean(this.beanDefMap[beanReference.id]!!)!!
             }
             declaredField.set(bean, value)
         }
