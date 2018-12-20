@@ -16,10 +16,15 @@ class AspectJAwareAdvisorAutoProxyCreator : BeanPostProcessor, BeanFactoryAware 
     }
 
     override fun postProcessAfterInitialization(bean: Any, beanName: String): Any {
-        if (bean is AspectJExpressionPointcutAdvisor)
+        if (bean is AspectJExpressionPointcutAdvisor) {
+//            beanFac!!.applyPropertyValues(bean, beanFac!!.beanDefMap!![beanName]!!)
             return bean
+        }
 
         if (bean is MethodInterceptor)
+            return bean
+
+        if (bean is Pointcut)
             return bean
 
         var advisors = beanFac!!.getBeansForType(AspectJExpressionPointcutAdvisor::class.java)
@@ -27,15 +32,17 @@ class AspectJAwareAdvisorAutoProxyCreator : BeanPostProcessor, BeanFactoryAware 
 
         advisors.forEach {
             var it = it as AspectJExpressionPointcutAdvisor
-            if (it.getPointcut().getClassFilter().matches(bean::class.java)) {
+            if (it.getMyPointcut()?.getClassFilter()!!.matches(bean::class.java)) {
                 var advisedSupport = AdvisedSupport()
-                advisedSupport.methodInterceptor = it.getAdvice() as MethodInterceptor
-                advisedSupport.methodMatcher = it.getPointcut().getMethodMatcher()
+                advisedSupport.methodInterceptor = it.getMyAdvice() as MethodInterceptor
+                advisedSupport.methodMatcher = it.getMyPointcut()?.getMethodMatcher()
 
                 var targetSource = TargetSource(bean, *bean::class.java.interfaces)
                 advisedSupport.targetSource = targetSource
 
-                return JdkDynamicAopProxy(advisedSupport).getProxy()!!
+//                beanFac!!.beanDefMap[beanName]!!.bean = JdkDynamicAopProxy(advisedSupport).getProxy()!!
+                beanFac!!.beanDefMap[beanName]!!.bean = CglibAopProxy(advisedSupport).getProxy()!!
+                return beanFac!!.beanDefMap[beanName]!!.bean!!
             }
         }
         return bean
